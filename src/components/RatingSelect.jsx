@@ -1,5 +1,5 @@
 function RatingSelect({ select, selected }) {
-  //  Don't need local state as its a duplicate of parent state ///    which we pass down as props
+  //  Don't need local state as its a duplicate of parent state ///  which we pass down as props
 
   const handleChange = (e) => {
     // + syntax changes typeOf from string to number
@@ -16,7 +16,7 @@ function RatingSelect({ select, selected }) {
             name='rating'
             value={i + 1}
             onChange={handleChange}
-            version={selected === i + 1 ? 'secondary' : 'primary'}
+            checked={selected === i + 1}
           />
           <label htmlFor={`num${i + 1}`}>{i + 1}</label>
         </li>

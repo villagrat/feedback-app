@@ -1,8 +1,10 @@
 import { useContext } from 'react';
+import FeedbackContext from '../context/FeedbackContext';
 
 function FeedbackStats() {
   const { feedback } = useContext(FeedbackContext);
 
+  // round and ignore decimal places
   const average = Math.round(
     feedback.reduce((acc, { rating }) => acc + rating, 0) / feedback.length
   );
