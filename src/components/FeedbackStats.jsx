@@ -4,10 +4,13 @@ import FeedbackContext from '../context/FeedbackContext';
 function FeedbackStats() {
   const { feedback } = useContext(FeedbackContext);
 
-  // round and ignore decimal places
-  const average = Math.round(
-    feedback.reduce((acc, { rating }) => acc + rating, 0) / feedback.length
-  );
+  let average =
+    feedback.reduce((acc, curr) => {
+      return acc + curr.rating;
+    }, 0) / feedback.length;
+
+  // 1 decimal place, remove w regex if it's 0
+  average = average.toFixed(1).replace(/[.,]0$/, '');
 
   return (
     <div className='feedback-stats'>
@@ -20,14 +23,11 @@ function FeedbackStats() {
 export default FeedbackStats;
 
 /*
-A classic approach to calculating avg with HigherOrder reduce on an array:
+Alternative way to calculate avg:
 
-let average =
-  feedback.reduce((acc, curr) => {  
-    return acc + curr.rating;
-  }, 0) / feedback.length;
-
-  // 1 decimal place, remove w regex if it's 0
-  average = average.toFixed(1).replace(/[.,]0$/, '');
+  // round and ignore decimal places
+  const average = Math.round(
+    feedback.reduce((acc, { rating }) => acc + rating, 0) / feedback.length
+  );
 
 */

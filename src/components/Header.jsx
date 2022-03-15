@@ -13,6 +13,18 @@ function Header({ text, bgColor, textColor }) {
         <Link to='/' style={{ textDecoration: 'none', color: '#ff6a95' }}>
           <h2>{text}</h2>
         </Link>
+        <a
+          href='https://villagrat.github.io'
+          style={{
+            textDecoration: 'none',
+            color: '#ff6a95',
+            fontSize: '22px',
+            fontWeight: '500',
+            textAlign: 'center',
+          }}
+        >
+          by @villagrat
+        </a>
       </div>
     </header>
   );
