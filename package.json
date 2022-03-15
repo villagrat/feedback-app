@@ -2,7 +2,7 @@
   "name": "feedback-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://villagrat-feedback-app.herokuapp.com",
+  "proxy": "https://villagrat-mock-server.herokuapp.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
@@ -18,13 +18,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"node server.js\" \"npm client\"",
-    "client": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch db.json",
-    "dev": "concurrently \"npm run server\" \"npm client\""
+    "server": "json-server --watch db.json --port 5000",
+    "dev": "concurrently \"npm run server\" \"npm start\""
   },
   "eslintConfig": {
     "extends": [
