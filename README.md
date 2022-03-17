@@ -1,11 +1,10 @@
 # Feedback App
 
-This project was written as part of [React Back to Front 2022](https://www.udemy.com/course/react-front-to-back-2022/)'s Udemy course by [Brad Traversy](https://traversymedia.com).
+A React App that allows users to add, update and delete feedback for a service or product. 
 
+It uses a mock REST API with json-server.
 
-It allows users to add, update and delete feedback. It uses a mock REST API with json-server.
-
-We deployed the app using a nifty little trick to have a mock backend on Heroku, which will persist the data but should only be considered as a demo/PoC type of deploy
+We deployed this app using a [nifty little trick](https://blog.mimacom.com/deploy-demo-with-api-heroku/) to have a mock backend on Heroku, which will persist the data but should only be considered as a demo/Proof of Concept type of deploy
 
 You can see a working version of the app [here](https://villagrat-feedback-app.herokuapp.com/)
 
